@@ -1,2 +1,4 @@
 key,en,ja
-greeting,hello,こんにちは
+appBarTitle,Internationalization,多言語化
+homeLabel,Home,ホーム
+searchLabel,Search,検索

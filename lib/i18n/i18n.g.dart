@@ -3,9 +3,9 @@
  * Generated file. Do not edit.
  *
  * Locales: 2
- * Strings: 6 (3.0 per locale)
+ * Strings: 18 (9.0 per locale)
  *
- * Built on 2021-12-28 at 23:29 UTC
+ * Built on 2021-12-28 at 23:54 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -27,13 +27,13 @@ enum AppLocale {
 /// Method A: Simple
 ///
 /// No rebuild after locale change.
-/// Translation happens during initialization of the widget (call of t).
+/// Translation happens during initialization of the widget (call of i18n).
 ///
 /// Usage:
-/// String a = t.someKey.anotherKey;
-/// String b = t['someKey.anotherKey']; // Only for edge cases!
-_I18nEn _t = _currLocale.translations;
-_I18nEn get t => _t;
+/// String a = i18n.someKey.anotherKey;
+/// String b = i18n['someKey.anotherKey']; // Only for edge cases!
+_I18nEn _i18n = _currLocale.translations;
+_I18nEn get i18n => _i18n;
 
 /// Method B: Advanced
 ///
@@ -47,9 +47,9 @@ _I18nEn get t => _t;
 /// );
 ///
 /// Step 2:
-/// final t = Translations.of(context); // Get t variable.
-/// String a = t.someKey.anotherKey; // Use t variable.
-/// String b = t['someKey.anotherKey']; // Only for edge cases!
+/// final i18n = Translations.of(context); // Get i18n variable.
+/// String a = i18n.someKey.anotherKey; // Use i18n variable.
+/// String b = i18n['someKey.anotherKey']; // Only for edge cases!
 class Translations {
 	Translations._(); // no constructor
 
@@ -81,7 +81,7 @@ class LocaleSettings {
 	/// Returns the locale which has been set.
 	static AppLocale setLocale(AppLocale locale) {
 		_currLocale = locale;
-		_t = _currLocale.translations;
+		_i18n = _currLocale.translations;
 
 		if (WidgetsBinding.instance != null) {
 			// force rebuild if TranslationProvider is used
@@ -273,7 +273,7 @@ class _I18nPage1En {
 
 	static final _I18nPage1En _instance = _I18nPage1En._();
 
-	String get greeting => 'hello';
+	_I18nPage1HeaderEn get header => _I18nPage1HeaderEn._instance;
 }
 
 class _I18nPage2En {
@@ -281,7 +281,9 @@ class _I18nPage2En {
 
 	static final _I18nPage2En _instance = _I18nPage2En._();
 
-	String get greeting => 'hello';
+	_I18nPage2HintTextEn get hintText => _I18nPage2HintTextEn._instance;
+	String result({required Object number}) => 'Result: $number';
+	_I18nPage2ItemEn get item => _I18nPage2ItemEn._instance;
 }
 
 class _I18nHomeEn {
@@ -289,7 +291,35 @@ class _I18nHomeEn {
 
 	static final _I18nHomeEn _instance = _I18nHomeEn._();
 
-	String get greeting => 'hello';
+	String get appBarTitle => 'Internationalization';
+	String get homeLabel => 'Home';
+	String get searchLabel => 'Search';
+}
+
+class _I18nPage1HeaderEn {
+	_I18nPage1HeaderEn._(); // no constructor
+
+	static final _I18nPage1HeaderEn _instance = _I18nPage1HeaderEn._();
+
+	String get recently => 'Recently';
+	String get favorites => 'Favorites';
+	String get all => 'All';
+}
+
+class _I18nPage2HintTextEn {
+	_I18nPage2HintTextEn._(); // no constructor
+
+	static final _I18nPage2HintTextEn _instance = _I18nPage2HintTextEn._();
+
+	String get search => 'Shop, Genre, etc.';
+}
+
+class _I18nPage2ItemEn {
+	_I18nPage2ItemEn._(); // no constructor
+
+	static final _I18nPage2ItemEn _instance = _I18nPage2ItemEn._();
+
+	String name({required Object index}) => 'Hogehoge $index';
 }
 
 class _I18nJa implements _I18nEn {
@@ -310,7 +340,7 @@ class _I18nPage1Ja implements _I18nPage1En {
 
 	static final _I18nPage1Ja _instance = _I18nPage1Ja._();
 
-	@override String get greeting => 'こんにちは';
+	@override _I18nPage1HeaderJa get header => _I18nPage1HeaderJa._instance;
 }
 
 class _I18nPage2Ja implements _I18nPage2En {
@@ -318,7 +348,9 @@ class _I18nPage2Ja implements _I18nPage2En {
 
 	static final _I18nPage2Ja _instance = _I18nPage2Ja._();
 
-	@override String get greeting => 'こんにちは';
+	@override _I18nPage2HintTextJa get hintText => _I18nPage2HintTextJa._instance;
+	@override String result({required Object number}) => '検索結果: $number';
+	@override _I18nPage2ItemJa get item => _I18nPage2ItemJa._instance;
 }
 
 class _I18nHomeJa implements _I18nHomeEn {
@@ -326,20 +358,60 @@ class _I18nHomeJa implements _I18nHomeEn {
 
 	static final _I18nHomeJa _instance = _I18nHomeJa._();
 
-	@override String get greeting => 'こんにちは';
+	@override String get appBarTitle => '多言語化';
+	@override String get homeLabel => 'ホーム';
+	@override String get searchLabel => '検索';
+}
+
+class _I18nPage1HeaderJa implements _I18nPage1HeaderEn {
+	_I18nPage1HeaderJa._(); // no constructor
+
+	static final _I18nPage1HeaderJa _instance = _I18nPage1HeaderJa._();
+
+	@override String get recently => '最近';
+	@override String get favorites => 'お気に入り';
+	@override String get all => '';
+}
+
+class _I18nPage2HintTextJa implements _I18nPage2HintTextEn {
+	_I18nPage2HintTextJa._(); // no constructor
+
+	static final _I18nPage2HintTextJa _instance = _I18nPage2HintTextJa._();
+
+	@override String get search => 'お店、ジャンル、…';
+}
+
+class _I18nPage2ItemJa implements _I18nPage2ItemEn {
+	_I18nPage2ItemJa._(); // no constructor
+
+	static final _I18nPage2ItemJa _instance = _I18nPage2ItemJa._();
+
+	@override String name({required Object index}) => 'ほげほげ $index';
 }
 
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
 late final Map<String, dynamic> _translationMapEn = {
-	'page1.greeting': 'hello',
-	'page2.greeting': 'hello',
-	'home.greeting': 'hello',
+	'page1.header.recently': 'Recently',
+	'page1.header.favorites': 'Favorites',
+	'page1.header.all': 'All',
+	'page2.hintText.search': 'Shop, Genre, etc.',
+	'page2.result': ({required Object number}) => 'Result: $number',
+	'page2.item.name': ({required Object index}) => 'Hogehoge $index',
+	'home.appBarTitle': 'Internationalization',
+	'home.homeLabel': 'Home',
+	'home.searchLabel': 'Search',
 };
 
 late final Map<String, dynamic> _translationMapJa = {
-	'page1.greeting': 'こんにちは',
-	'page2.greeting': 'こんにちは',
-	'home.greeting': 'こんにちは',
+	'page1.header.recently': '最近',
+	'page1.header.favorites': 'お気に入り',
+	'page1.header.all': '',
+	'page2.hintText.search': 'お店、ジャンル、…',
+	'page2.result': ({required Object number}) => '検索結果: $number',
+	'page2.item.name': ({required Object index}) => 'ほげほげ $index',
+	'home.appBarTitle': '多言語化',
+	'home.homeLabel': 'ホーム',
+	'home.searchLabel': '検索',
 };

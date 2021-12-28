@@ -11,3 +11,4 @@ targets:
           namespaces: true
           pluralization:
             auto: off
+          translate_var: i18n

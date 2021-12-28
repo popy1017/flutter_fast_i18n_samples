@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fast_i18n_samples/i18n/i18n.g.dart';
 import 'package:shimmer/shimmer.dart';
 
 const double size = 200;
@@ -11,11 +12,11 @@ class Page1 extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          _buildHeader(context, '最近'),
+          _buildHeader(context, i18n.page1.header.recently),
           _buildItemList(),
-          _buildHeader(context, 'お気に入り'),
+          _buildHeader(context, i18n.page1.header.favorites),
           _buildItemList(),
-          _buildHeader(context, 'すべて'),
+          _buildHeader(context, i18n.page1.header.all),
           _buildItemList(),
         ],
       ),

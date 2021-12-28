@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fast_i18n_samples/pages/page1.dart';
 import 'package:flutter_fast_i18n_samples/pages/page2.dart';
+import 'i18n/i18n.g.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _HomeState extends State<Home> {
     ];
     return Scaffold(
       appBar: AppBar(
-        title: const Text('I18n samples'),
+        title: Text(i18n.home.appBarTitle),
       ),
       body: IndexedStack(
         index: _currentIndex,
@@ -33,14 +34,14 @@ class _HomeState extends State<Home> {
   BottomNavigationBar _buildBottomNavigationBar() {
     return BottomNavigationBar(
       currentIndex: _currentIndex,
-      items: const [
+      items: [
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'ホーム',
+          icon: const Icon(Icons.home),
+          label: i18n.home.homeLabel,
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.search),
-          label: '検索',
+          icon: const Icon(Icons.search),
+          label: i18n.home.searchLabel,
         ),
       ],
       onTap: (int index) {
