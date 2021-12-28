@@ -32,6 +32,7 @@ class _HomeState extends State<Home> {
 
   BottomNavigationBar _buildBottomNavigationBar() {
     return BottomNavigationBar(
+      currentIndex: _currentIndex,
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
