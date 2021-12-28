@@ -29,8 +29,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations: # add this
+    sdk: flutter
 
   shimmer: ^2.0.0
+
+  fast_i18n: ^5.7.0
 
 
   # The following adds the Cupertino Icons font to your application.
