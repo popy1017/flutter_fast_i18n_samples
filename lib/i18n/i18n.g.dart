@@ -5,7 +5,7 @@
  * Locales: 2
  * Strings: 18 (9.0 per locale)
  *
- * Built on 2021-12-28 at 23:54 UTC
+ * Built on 2021-12-29 at 00:08 UTC
  */
 
 import 'package:flutter/widgets.dart';
@@ -370,7 +370,7 @@ class _I18nPage1HeaderJa implements _I18nPage1HeaderEn {
 
 	@override String get recently => '最近';
 	@override String get favorites => 'お気に入り';
-	@override String get all => '';
+	@override String get all => 'すべて';
 }
 
 class _I18nPage2HintTextJa implements _I18nPage2HintTextEn {
@@ -407,7 +407,7 @@ late final Map<String, dynamic> _translationMapEn = {
 late final Map<String, dynamic> _translationMapJa = {
 	'page1.header.recently': '最近',
 	'page1.header.favorites': 'お気に入り',
-	'page1.header.all': '',
+	'page1.header.all': 'すべて',
 	'page2.hintText.search': 'お店、ジャンル、…',
 	'page2.result': ({required Object number}) => '検索結果: $number',
 	'page2.item.name': ({required Object index}) => 'ほげほげ $index',
