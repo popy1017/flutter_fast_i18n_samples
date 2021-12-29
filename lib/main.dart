@@ -6,7 +6,7 @@ import 'i18n/i18n.g.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
+  LocaleSettings.useDeviceLocale();
   runApp(TranslationProvider(child: const MyApp()));
 }
 
